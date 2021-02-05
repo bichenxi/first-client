@@ -1,21 +1,18 @@
 <template>
- <div class="home">
-      <head-view />
-  </div>
+    <div class="home">
+        <head-view />
+    </div>
 </template>
-
 <script>
 import headView from '../components/Header'
 
 export default {
-  name: 'Home',
+    name: 'Home',
 
-  components: {
-    headView
-  }
+    components: {
+        headView,
+    },
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
