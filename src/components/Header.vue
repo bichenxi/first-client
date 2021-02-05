@@ -1,8 +1,8 @@
 <template>
     <div
-        class="bg-blue-900 py-3 px-3 text-white fixed top-0 left-0 w-full flex items-center justify-between"
+        class="bg-blue-900 py-3 px-3 text-white w-full flex items-center justify-between"
     >
-        <div>
+        <div v-if="user">
             <span> {{ user.name }} 欢迎来到开发者平台 </span>
             <span class="ml-8">
                 您于{{
