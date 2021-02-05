@@ -8,14 +8,12 @@
 </template>
 <script>
 import headView from '../components/Header'
-import iconFont from '../components/IconFont'
 
 export default {
     name: 'Home',
 
     components: {
         headView,
-        iconFont,
     },
 }
 </script>

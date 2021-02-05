@@ -5,10 +5,15 @@ import store from './store'
 import '@/assets/css/tailwind.css'
 // https://day.js.org/zh-CN/
 import dayjs from 'dayjs'
+
 // $catch
 import catchFn from './utils/catch'
+
 // iconFont svg
 import '../svg/iconfont'
+// 将 iconfont 变为全局组件
+import iconFont from './components/IconFont'
+Vue.component('icon-font', iconFont)
 
 // 全局注入弹窗
 import './utils/showModule'
