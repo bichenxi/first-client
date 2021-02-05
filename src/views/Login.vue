@@ -3,7 +3,9 @@
         <div
             class="bg-blue-900 py-3 px-3 text-white fixed w-full bottom-0 flex justify-center"
         >
-            <h3 class="text-xl">{{ isRegister ? '注册' : '登录' }}</h3>
+            <h3 class="text-xl">
+                {{ isRegister ? '注册' : '登录' }}
+            </h3>
         </div>
         <div
             class="bg-blue-500 fixed top-0 w-full py-2 px-3 text-white flex justify-between"
@@ -143,7 +145,12 @@ export default {
             this.$catch(async () => {
                 const {
                     data: { message, success },
-                } = await register({ name, account, password, date })
+                } = await register({
+                    name,
+                    account,
+                    password,
+                    date,
+                })
                 if (success) {
                     this.switchRegister()
                     this.$showModal({
