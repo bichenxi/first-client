@@ -5,7 +5,10 @@ import store from './store'
 import '@/assets/css/tailwind.css'
 // https://day.js.org/zh-CN/
 import dayjs from 'dayjs'
+// $catch
 import catchFn from './utils/catch'
+// iconFont svg
+import '../svg/iconfont'
 
 // 全局注入弹窗
 import './utils/showModule'
