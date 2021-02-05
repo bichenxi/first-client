@@ -1,3 +1,4 @@
+// https://tailwindcss.com/
 module.exports = {
   purge: [
     './src/**/*.html',
