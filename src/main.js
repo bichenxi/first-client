@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+
 import '@/assets/css/tailwind.css'
 // https://day.js.org/zh-CN/
 import dayjs from 'dayjs'
@@ -15,9 +16,12 @@ import '../svg/iconfont'
 import iconFont from './components/IconFont'
 Vue.component('icon-font', iconFont)
 
-// 全局注入弹窗
+// 弹窗全局注入弹窗
 import './utils/showModule'
-Vue.config.productionTip = false
+
+// compositionAPi
+import VueCompositionApi from '@vue/composition-api'
+Vue.use(VueCompositionApi)
 
 // 注入实例
 Vue.prototype.$dayjs = dayjs
@@ -37,6 +41,8 @@ router.beforeEach((to, from, next) => {
     next()
     router.push('/login')
 })
+
+Vue.config.productionTip = false
 
 new Vue({
     router,
