@@ -7,6 +7,11 @@ import '@/assets/css/tailwind.css'
 // https://day.js.org/zh-CN/
 import dayjs from 'dayjs'
 
+// 使用 element ui
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
+
 // $catch
 import catchFn from './utils/catch'
 
