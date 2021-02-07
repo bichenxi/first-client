@@ -10,9 +10,9 @@
                 }}加入本平台
             </span>
         </div>
-        <button @click="signOut" class="text-sm hover:text-gray-300">
-            退出登录
-        </button>
+        <router-link class="text-sm hover:text-gray-300" to="/Customer">
+            个人中心
+        </router-link>
     </div>
 </template>
 
@@ -22,14 +22,6 @@ import { mapState } from 'vuex'
 export default {
     computed: {
         ...mapState(['user']),
-    },
-
-    methods: {
-        signOut() {
-            window.localStorage.removeItem('token')
-            this.$store.commit('removeUser')
-            this.$router.replace('/login')
-        },
     },
 }
 </script>
