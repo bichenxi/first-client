@@ -1,27 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Login from '../views/Login'
-
 Vue.use(VueRouter)
 
-const routes = [
-    {
-        path: '/',
-        name: 'Home',
-        component: Home,
-    },
-    {
-        path: '/login',
-        name: 'Login',
-        component: Login,
-    },
-    {
-        path: '/customer',
-        name: 'Customer',
-        component: () => import('../views/Customer.vue'),
-    },
-]
+import Home from './home'
+import Login from './login'
+import Customer from './customer'
+
+const routes = [Home, Login, Customer]
 
 const router = new VueRouter({
     mode: 'history',
