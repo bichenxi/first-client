@@ -19,7 +19,8 @@ export default new Vuex.Store({
     },
     actions: {
         async login(store, query) {
-            const { data } = await axios.post('/login', query)
+            const { data } = await axios.post('register/login', query)
+            console.log(data.token)
             if (!data.success) return data.message
             store.commit('setUser', data)
             window.localStorage.setItem('token', data.token)

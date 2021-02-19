@@ -141,7 +141,7 @@ export default {
 
         async registerHandler() {
             const { name, account, password } = this
-            const date = this.$dayjs().format('YYYY-MM-DD HH:mm')
+            const date = this.$dayjs().format('YYYY-MM-DD HH:mm:ss')
             this.$catch(async () => {
                 const {
                     data: { message, success },
@@ -171,7 +171,7 @@ export default {
 
 <style lang="postcss" scoped>
 .login {
-    background: url('http://localhost:8080//static/login.png') 100% 100%
+    background: url('http://114.215.183.147:4000/static/login.png') 100% 100%
         no-repeat;
 }
 
