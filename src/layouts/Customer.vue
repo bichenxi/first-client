@@ -1,6 +1,9 @@
 <template>
     <div class="costomer">
-        <h1>个人中心</h1>
+        <header class="w-100 bg-gray-900 p-3 text-white flex justify-center">
+            <div><router-link to="/"> 返回首页 </router-link></div>
+            <h3>个人中心</h3>
+        </header>
         <button @click="signOut" class="text-sm hover:text-gray-300">
             退出登录
         </button>

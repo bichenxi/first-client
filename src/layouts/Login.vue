@@ -171,7 +171,7 @@ export default {
 
 <style lang="postcss" scoped>
 .login {
-    background: url('http://114.215.183.147:4000/static/login.png') 100% 100%
+    background: url('http://bichengxi.top:4000/static/login.png') 100% 100%
         no-repeat;
 }
 
