@@ -20,14 +20,14 @@ export default new Vuex.Store({
     actions: {
         async login(store, query) {
             const { data } = await axios.post('register/login', query)
-            console.log(data.token)
             if (!data.success) return data.message
             store.commit('setUser', data)
             window.localStorage.setItem('token', data.token)
+            window.localStorage.setItem('account', data.account)
         },
 
         async fetchUser(store, query) {
-            const { data } = await axios.post('/login/user', query)
+            const { data } = await axios.post('register/user', query)
             store.commit('setUser', data)
         },
     },

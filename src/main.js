@@ -38,7 +38,7 @@ router.beforeEach((to, from, next) => {
         next()
         return
     }
-    const token = window.localStorage.getItem('token')
+    const token = window.localStorage.getItem('account')
     if (token) {
         next()
         return
