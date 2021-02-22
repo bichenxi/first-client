@@ -14,13 +14,13 @@ const modalClass = Vue.extend({
         }
         // 如果父级 销毁 组件也销毁
         this.$parent.$once('hook:destroyed', handleDestroy)
-    }
+    },
 })
 
 Vue.prototype.$showModal = function anonymous(propsData) {
     const modal = new modalClass({
         parent: this,
-        propsData
+        propsData,
     })
 
     return new Promise((resolve, reject) => {

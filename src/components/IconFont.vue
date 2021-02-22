@@ -1,10 +1,8 @@
 <template>
     <div>
-        123
         <svg class="icon" aria-hidden="true">
             <use :xlink:href="`#${name}`"></use>
         </svg>
-        456
     </div>
 </template>
 

@@ -8,7 +8,7 @@
                 </router-link>
             </div>
         </header>
-        <div class="py-32 flex justify-center">
+        <div class="py-20 flex justify-center">
             <div class="p-10 w-1/2 bg-white border border-gray-200">
                 <div>
                     <h2 class="text-4xl pb-4 border-b border-gray-300">
@@ -25,11 +25,11 @@
                         class="py-5 border-b border-gray-300 flex justify-between items-center"
                     >
                         <div class="flex-1 flex">
-                            <span>用户名</span>
+                            <div class="w-32">用户名</div>
                             <input
                                 type="text"
                                 :value="user.name"
-                                class="flex-1 px-6"
+                                class="flex-1 pr-5"
                             />
                         </div>
                         <div class="text-blue-500">
@@ -40,9 +40,9 @@
                     <div
                         class="py-5 border-b border-gray-300 flex justify-between items-center"
                     >
-                        <div>
-                            <span>邮箱</span>
-                            <input type="text" />
+                        <div class="flex flex-1">
+                            <div class="w-32">邮箱</div>
+                            <input type="text" class="flex-1 pr-5" />
                         </div>
                         <div class="text-blue-500">
                             <i class="el-icon-edit mr-4 text-2xl"></i>
@@ -52,9 +52,9 @@
                     <div
                         class="py-5 border-b border-gray-300 flex justify-between items-center"
                     >
-                        <div>
-                            <span>用户名</span>
-                            <input type="text" class="pl-6" />
+                        <div class="flex flex-1">
+                            <div class="w-32">用户名</div>
+                            <input type="email" class="flex-1 pr-5" />
                         </div>
                         <div class="text-blue-500">
                             <i class="el-icon-edit mr-4 text-2xl"></i>
@@ -64,9 +64,9 @@
                     <div
                         class="py-5 border-b border-gray-300 flex justify-between items-center"
                     >
-                        <div>
-                            <span>联系地址</span>
-                            <input type="text" />
+                        <div class="flex flex-1">
+                            <div class="w-32">联系地址</div>
+                            <input type="text" class="flex-1 pr-5" />
                         </div>
                         <div class="text-blue-500">
                             <i class="el-icon-edit mr-4 text-2xl"></i>
@@ -76,9 +76,9 @@
                     <div
                         class="py-5 border-b border-gray-300 flex justify-between items-center"
                     >
-                        <div>
-                            <span>个人介绍</span>
-                            <input type="text" />
+                        <div class="flex flex-1">
+                            <div class="w-32">个人介绍</div>
+                            <textarea class="flex-1"></textarea>
                         </div>
                         <div class="text-blue-500">
                             <i class="el-icon-edit mr-4 text-2xl"></i>
@@ -102,6 +102,9 @@
 <script>
 import { mapState } from 'vuex'
 
+// api
+// import { upData } from '../api/customer'
+
 export default {
     computed: {
         ...mapState(['user']),
@@ -118,10 +121,12 @@ export default {
 </script>
 
 <style scoped>
-input {
+input,
+textarea {
     outline: none;
 }
-input:focus {
+input:focus,
+textarea:focus {
     border: none;
 }
 </style>
