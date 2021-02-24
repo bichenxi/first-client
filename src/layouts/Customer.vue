@@ -26,6 +26,7 @@
                     >
                         <div class="flex-1 flex">
                             <div class="w-32">用户名</div>
+                            <span>{{ user.name }}</span>
                             <input
                                 type="text"
                                 :value="user.name"
@@ -42,18 +43,7 @@
                     >
                         <div class="flex flex-1">
                             <div class="w-32">邮箱</div>
-                            <input type="text" class="flex-1 pr-5" />
-                        </div>
-                        <div class="text-blue-500">
-                            <i class="el-icon-edit mr-4 text-2xl"></i>
-                            <span>修改</span>
-                        </div>
-                    </div>
-                    <div
-                        class="py-5 border-b border-gray-300 flex justify-between items-center"
-                    >
-                        <div class="flex flex-1">
-                            <div class="w-32">用户名</div>
+                            <span>{{ user.email }}</span>
                             <input type="email" class="flex-1 pr-5" />
                         </div>
                         <div class="text-blue-500">
@@ -65,7 +55,21 @@
                         class="py-5 border-b border-gray-300 flex justify-between items-center"
                     >
                         <div class="flex flex-1">
+                            <div class="w-32">电话</div>
+                            <span>{{ user.phone }}</span>
+                            <input type="number" class="flex-1 pr-5" />
+                        </div>
+                        <div class="text-blue-500">
+                            <i class="el-icon-edit mr-4 text-2xl"></i>
+                            <span>修改</span>
+                        </div>
+                    </div>
+                    <div
+                        class="py-5 border-b border-gray-300 flex justify-between items-center"
+                    >
+                        <div class="flex flex-1">
                             <div class="w-32">联系地址</div>
+                            <span>{{ user.address }}</span>
                             <input type="text" class="flex-1 pr-5" />
                         </div>
                         <div class="text-blue-500">
