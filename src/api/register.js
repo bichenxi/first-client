@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../utils/http'
 const BASE_URL = '/register'
 
 export function register(query) {
