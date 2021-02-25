@@ -26,16 +26,32 @@
                     >
                         <div class="flex-1 flex">
                             <div class="w-32">用户名</div>
-                            <span>{{ user.name }}</span>
+                            <span v-if="!nameState">{{ user.name }}</span>
                             <input
+                                ref="name"
+                                @blur="leave('nameState')"
+                                v-else
                                 type="text"
-                                :value="user.name"
+                                v-model="focus"
                                 class="flex-1 pr-5"
                             />
                         </div>
-                        <div class="text-blue-500">
-                            <i class="el-icon-edit mr-4 text-2xl"></i>
+                        <div
+                            @click="handleFocus('name')"
+                            v-if="!nameState"
+                            class="text-blue-500"
+                        >
+                            <i class="el-icon-edit mr-4 text-xl"></i>
                             <span>修改</span>
+                        </div>
+                        <div v-else>
+                            <span
+                                @click="save({ name: focus })"
+                                class="text-blue-500 cursor-pointer"
+                            >
+                                保存
+                            </span>
+                            <span class="ml-3 cursor-pointer">取消</span>
                         </div>
                     </div>
                     <div
@@ -107,9 +123,19 @@
 import { mapState } from 'vuex'
 
 // api
-// import { upData } from '../api/customer'
+import { upData } from '../api/customer'
 
 export default {
+    data: () => ({
+        // satte
+        nameState: false,
+        emilState: false,
+        phoneState: false,
+        addressState: false,
+        // 焦点
+        focus: null,
+    }),
+
     computed: {
         ...mapState(['user']),
     },
@@ -119,6 +145,30 @@ export default {
             window.localStorage.removeItem('token')
             this.$store.commit('removeUser')
             this.$router.replace('/login')
+        },
+
+        handleFocus(params) {
+            this.focus = this.user[params]
+            this[params + 'State'] = true
+
+            this.$nextTick(() => {
+                this.$refs[params].focus()
+            })
+        },
+
+        async save(query) {
+            this.fullscreenLoading = true
+            const data = await upData(query)
+            console.log(data)
+            // this.fullscreenLoading = false
+        },
+
+        leave(params) {
+            setTimeout(() => {
+                this.$nextTick(() => {
+                    this[params] = false
+                })
+            }, 500)
         },
     },
 }
